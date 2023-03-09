@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Action RPG/Action RPG Resources/Effects/HitEffect.png" type="Texture" id=1]
+[ext_resource path="res://Action RPG/Action RPG Resources/Shaders/Lights/light.png" type="Texture" id=2]
+
+[node name="LampV2" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 2 )
+texture_scale = 0.3
+color = Color( 0.937255, 0.286275, 0.137255, 1 )
+energy = 1.54

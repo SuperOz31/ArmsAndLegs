@@ -1,0 +1,123 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://title_screen/buttons/ButtonV2.tscn" type="PackedScene" id=1]
+
+[node name="TitleScreenV2" type="Node2D"]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+margin_left = 60.0
+margin_top = 30.0
+margin_right = 260.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 200, 120 )
+
+[node name="VBoxContainer1" type="VBoxContainer" parent="Control/HBoxContainer"]
+margin_right = 64.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonV2" parent="Control/HBoxContainer/VBoxContainer1" instance=ExtResource( 1 )]
+margin_right = 64.0
+margin_bottom = 58.0
+rect_scale = Vector2( 1, 1 )
+scene_to_load = "res://Action RPG/Action RPG Resources/Levels/WorldV1-V3/World1.tscn"
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer1/ButtonV2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "World1
+Arms"
+align = 1
+valign = 1
+
+[node name="ButtonV3" parent="Control/HBoxContainer/VBoxContainer1" instance=ExtResource( 1 )]
+margin_top = 62.0
+margin_right = 64.0
+margin_bottom = 120.0
+rect_scale = Vector2( 1, 1 )
+scene_to_load = "res://Action RPG/Action RPG Resources/Levels/WorldV1-V3/Skate1.tscn"
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer1/ButtonV3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Skate"
+align = 1
+valign = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/HBoxContainer"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonV2" parent="Control/HBoxContainer/VBoxContainer2" instance=ExtResource( 1 )]
+margin_right = 64.0
+margin_bottom = 58.0
+rect_scale = Vector2( 1, 1 )
+scene_to_load = "res://Action RPG/Action RPG Resources/Levels/WorldV1-V3/World2.tscn"
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer2/ButtonV2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "World2
+Sword"
+align = 1
+valign = 1
+
+[node name="ButtonV3" parent="Control/HBoxContainer/VBoxContainer2" instance=ExtResource( 1 )]
+margin_top = 62.0
+margin_right = 64.0
+margin_bottom = 120.0
+rect_scale = Vector2( 1, 1 )
+scene_to_load = "res://Action RPG/Action RPG Resources/Levels/World4/World4.tscn"
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer2/ButtonV3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "World4
+Animation
+Tree"
+align = 1
+valign = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Control/HBoxContainer"]
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonV2" parent="Control/HBoxContainer/VBoxContainer3" instance=ExtResource( 1 )]
+margin_right = 64.0
+margin_bottom = 58.0
+rect_scale = Vector2( 1, 1 )
+scene_to_load = "res://Action RPG/Action RPG Resources/Levels/WorldV1-V3/World3.tscn"
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer3/ButtonV2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "World3
+Lights"
+align = 1
+valign = 1
+
+[node name="ButtonV3" parent="Control/HBoxContainer/VBoxContainer3" instance=ExtResource( 1 )]
+margin_top = 62.0
+margin_right = 64.0
+margin_bottom = 120.0
+rect_scale = Vector2( 1, 1 )
+scene_to_load = "res://Action RPG/Action RPG Resources/Levels/WorldV1-V3/World1.tscn"
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer3/ButtonV3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Empty"
+align = 1
+valign = 1

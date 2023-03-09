@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Action RPG/Action RPG Resources/Player/PlayerV1-V3/PlayerV3.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Action RPG/Action RPG Resources/Shaders/Lights/Lamp.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Action RPG/Action RPG Resources/Levels/WorldV1-V3/Prototype_Background.png" type="Texture" id=3]
+[ext_resource path="res://Action RPG/Action RPG Resources/Shaders/ShockwaveAnimationPlayer.tscn" type="PackedScene" id=4]
+
+[node name="Level1" type="YSort"]
+scale = Vector2( 0.5, 0.5 )
+sort_enabled = false
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 159, 140 )
+scale = Vector2( 0.156669, 0.156669 )
+texture = ExtResource( 3 )
+
+[node name="PlayerV3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 135, 122 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 4 )]
+
+[node name="Lamp" parent="." instance=ExtResource( 2 )]
+position = Vector2( 237, 86 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.235294, 0.360784, 0.427451, 1 )

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SegmentShape2D" id=2]
+b = Vector2( 0, 28 )
+
+[node name="LArm" type="CollisionShape2D"]
+position = Vector2( 10, -12 )
+shape = SubResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -2.0
+margin_right = 2.0
+margin_bottom = 28.0
+color = Color( 0.827451, 0.498039, 0.380392, 1 )

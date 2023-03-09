@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Click1.mp3-014320b4f05a058861ad0d64e2e59977.mp3str"
+
+[deps]
+
+source_file="res://Action RPG/Action RPG Resources/Levels/WorldV6/Click1.mp3"
+dest_files=[ "res://.import/Click1.mp3-014320b4f05a058861ad0d64e2e59977.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

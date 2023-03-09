@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Action RPG/Action RPG Resources/Player/PlayerV4/PlayerV4.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Action RPG/Action RPG Resources/Shaders/Lights/Lamp.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Action RPG/Action RPG Resources/Levels/WorldV4/StartingRoom.png" type="Texture" id=3]
+[ext_resource path="res://Action RPG/Action RPG Resources/Shaders/Lights/light.png" type="Texture" id=4]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+background_energy = 10.9
+auto_exposure_min_luma = 0.0
+glow_enabled = true
+glow_levels/1 = true
+glow_levels/2 = true
+glow_levels/3 = false
+glow_intensity = 2.02
+glow_strength = 1.53
+glow_blend_mode = 0
+glow_hdr_threshold = 1.5
+glow_hdr_luminance_cap = 2.0
+
+[node name="World4" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 81, 48 )
+texture = ExtResource( 3 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="PlayerV4" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 78, 40 )
+
+[node name="ColorRect" type="ColorRect" parent="YSort"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+color = Color( 1, 0, 0.913725, 1 )
+
+[node name="Light2D" type="Light2D" parent="YSort/ColorRect"]
+texture = ExtResource( 4 )
+texture_scale = 0.7
+color = Color( 0.937255, 0.776471, 0.137255, 1 )
+energy = 0.2
+
+[node name="Lamp" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 77, 24 )
+scale = Vector2( 0.05, 0.05 )
+
+[node name="Lamp2" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 59, 24 )
+scale = Vector2( 0.05, 0.05 )
+
+[node name="Lamp3" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 95, 24 )
+scale = Vector2( 0.05, 0.05 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )

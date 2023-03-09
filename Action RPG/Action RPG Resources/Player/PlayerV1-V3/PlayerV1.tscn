@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Action RPG/Action RPG Resources/Player/PlayerV1-V3/PlayerSpriteSheet1.png" type="Texture" id=1]
+[ext_resource path="res://Action RPG/Action RPG Resources/Player/PlayerV1-V3/PlayerV1.gd" type="Script" id=2]
+[ext_resource path="res://Action RPG/Action RPG Resources/Shaders/Lights/LArm.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Action RPG/Action RPG Resources/Player/PlayerV1-V3/RArm.tscn" type="PackedScene" id=4]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 8.0
+height = 8.0
+
+[node name="PlayerV4" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="CollisionShape2D"]
+position = Vector2( 56.0001, -27.9998 )
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 15
+
+[node name="RArm" parent="." instance=ExtResource( 3 )]
+
+[node name="LArm" parent="." instance=ExtResource( 4 )]
+position = Vector2( -10, -12 )
