@@ -23,15 +23,15 @@ func _process(delta):
 	
 	
 	if Input.is_mouse_button_pressed( 1 ):
-		$PlayerV5.rotation += .15
-		ZoomAcceleration += .2
+		$PlayerV5.rotation += .04
+		ZoomAcceleration += .05
 		$PlayerV5.scale.x += ZoomAcceleration * 2
 		$PlayerV5.scale.y += ZoomAcceleration * 2
 		$PlayerV5/Camera2D.zoom.x += ZoomAcceleration
 		$PlayerV5/Camera2D.zoom.y += ZoomAcceleration
 	elif ZoomAcceleration > 0:
-		$PlayerV5.rotation += .15
-		$PlayerV5.scale.x -=  ZoomAcceleration * 10
-		$PlayerV5.scale.y -=  ZoomAcceleration * 10
+		$PlayerV5.rotation += .04
+		$PlayerV5.scale.x -=  ZoomAcceleration * 4
+		$PlayerV5.scale.y -=  ZoomAcceleration * 4
 		$PlayerV5/Camera2D.zoom.x -= ZoomAcceleration
 		$PlayerV5/Camera2D.zoom.y -= ZoomAcceleration
