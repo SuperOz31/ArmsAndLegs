@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HeartUIFull.png-b33b74db24e3cdb948370d9a355c1209.stex"
+path="res://.import/Earth.jpg-c2e46f746f79d20fc482e98ff63c8e2f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Action RPG/Action RPG Resources/Levels/WorldV7/HeartUIFull.png"
-dest_files=[ "res://.import/HeartUIFull.png-b33b74db24e3cdb948370d9a355c1209.stex" ]
+source_file="res://Action RPG/Action RPG Resources/Levels/WorldV7/Earth.jpg"
+dest_files=[ "res://.import/Earth.jpg-c2e46f746f79d20fc482e98ff63c8e2f.stex" ]
 
 [params]
 

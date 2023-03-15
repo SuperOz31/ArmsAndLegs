@@ -7,7 +7,7 @@
 radius = 12.0
 height = 0.0
 
-[node name="ShadowAttacker" type="KinematicBody2D"]
+[node name="ShadowAttackerV2" type="KinematicBody2D"]
 position = Vector2( 33, 29 )
 collision_layer = 2
 collision_mask = 2
@@ -25,6 +25,7 @@ texture = ExtResource( 2 )
 offset = Vector2( 25, -26 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Light2D" type="Light2D" parent="."]

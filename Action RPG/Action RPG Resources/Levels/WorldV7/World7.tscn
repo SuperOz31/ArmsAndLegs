@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Action RPG/Action RPG Resources/Player/PlayerV5/PlayerV5.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Action RPG/Action RPG Resources/Levels/WorldV5/Background.png" type="Texture" id=2]
+[ext_resource path="res://Action RPG/Action RPG Resources/Levels/WorldV7/World7.gd" type="Script" id=4]
+[ext_resource path="res://Action RPG/Action RPG Resources/Levels/WorldV7/Earth.jpg" type="Texture" id=5]
+[ext_resource path="res://Action RPG/Action RPG Resources/Levels/WorldV7/Galaxy.jpg" type="Texture" id=6]
+[ext_resource path="res://Action RPG/Action RPG Resources/Levels/WorldV7/MilkyWay.webp" type="Texture" id=7]
+[ext_resource path="res://Action RPG/Action RPG Resources/Levels/WorldV7/Galaxy.webp" type="Texture" id=8]
+
+[node name="World7" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="MilkyWay" type="Sprite" parent="."]
+visible = false
+position = Vector2( 2663, 3145 )
+scale = Vector2( 50000, 50000 )
+texture = ExtResource( 7 )
+
+[node name="Galaxy" type="Sprite" parent="."]
+position = Vector2( -69322, 2893 )
+scale = Vector2( 2000, 2000 )
+texture = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1758, 2605 )
+scale = Vector2( 15.3824, 15.3824 )
+texture = ExtResource( 6 )
+
+[node name="Earth" type="Sprite" parent="."]
+position = Vector2( 51, 60 )
+scale = Vector2( 30, 30 )
+texture = ExtResource( 5 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 82, 63 )
+texture = ExtResource( 2 )
+
+[node name="PlayerV5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 11, 41 )

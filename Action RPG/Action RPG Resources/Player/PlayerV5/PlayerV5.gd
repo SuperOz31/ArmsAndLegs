@@ -43,8 +43,8 @@ onready var colorRect = preload("res://Action RPG/Action RPG Resources/Levels/Wo
 var startTime = 0.0
 
 func _ready():
+	$Light2D.energy = 0
 	$TextureProgress.value = 100
-	
 	startTime = OS.get_ticks_usec() / 1000000.0
 	updateTimer()
 
@@ -53,6 +53,8 @@ func updateTimer():
 	var currentTime = OS.get_ticks_usec() / 1000000.0 - startTime
 	$TimeLabel.text = "Time: " + str(currentTime)
 	$TimeLabel.text = "%.1f" % currentTime
+	
+	
 func Dio():
 	if Input.is_mouse_button_pressed(2):
 		if Input.is_mouse_button_pressed(1):
