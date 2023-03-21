@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Prototype_Idles_Larger_SpriteSheet.png-ce4a858d51dea52e670912aae2173a2f.stex"
+path="res://.import/EXAMPLE.png-2b312d6b73b70e08a0ed5a475c9d4279.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Action RPG/Action RPG Resources/Player/Prototype_Idles_Larger_SpriteSheet.png"
-dest_files=[ "res://.import/Prototype_Idles_Larger_SpriteSheet.png-ce4a858d51dea52e670912aae2173a2f.stex" ]
+source_file="res://Action RPG/Action RPG Resources/Player/PlayerV6/EXAMPLE.png"
+dest_files=[ "res://.import/EXAMPLE.png-2b312d6b73b70e08a0ed5a475c9d4279.stex" ]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Action RPG/Action RPG Resources/Player/PlayerV5/PlayerV5.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Action RPG/Action RPG Resources/Levels/WorldV5/Background.png" type="Texture" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://Action RPG/Action RPG Resources/Levels/WorldV7/Galaxy.jpg" type="Texture" id=6]
 [ext_resource path="res://Action RPG/Action RPG Resources/Levels/WorldV7/MilkyWay.webp" type="Texture" id=7]
 [ext_resource path="res://Action RPG/Action RPG Resources/Levels/WorldV7/Galaxy.webp" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 103, 10.5 )
 
 [node name="World7" type="Node2D"]
 script = ExtResource( 4 )
@@ -36,5 +39,45 @@ texture = ExtResource( 5 )
 position = Vector2( 82, 63 )
 texture = ExtResource( 2 )
 
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2( 189, 62 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2( -24, 58 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 83, 11 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 79, 146 )
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 11, 41 )
+current = true
+limit_left = -13
+limit_top = -10
+limit_right = 179
+limit_bottom = 135
+editor_draw_limits = true
+
 [node name="PlayerV5" parent="." instance=ExtResource( 1 )]
 position = Vector2( 11, 41 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerV5"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Node2D" type="Node2D" parent="."]
