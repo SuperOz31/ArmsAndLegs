@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Action RPG/Action RPG Resources/Player/PlayerV6/PlayerV6.gd" type="Script" id=1]
 [ext_resource path="res://Action RPG/Action RPG Resources/Player/PlayerV6/EXAMPLE.png" type="Texture" id=2]
 [ext_resource path="res://Action RPG/Action RPG Resources/Player/PlayerV6/Prototype_Idles_Larger_SpriteSheet.png" type="Texture" id=3]
+[ext_resource path="res://Action RPG/Action RPG Resources/Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Action RPG/Action RPG Resources/Hitboxes and Hurtboxes/JointV2.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 2.66667
@@ -57,6 +59,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
 [sub_resource type="Animation" id=16]
 resource_name = "RunDown"
@@ -74,6 +88,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 28, 29, 30, 31 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 90.0 ]
+}
 
 [sub_resource type="Animation" id=15]
 resource_name = "RunLeft"
@@ -90,6 +116,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 18, 19, 20, 21 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 180.0 ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -109,6 +147,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 14, 15, 16, 17 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
 [sub_resource type="Animation" id=17]
 resource_name = "RunUp"
@@ -126,6 +176,22 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 38, 39, 40, 41 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 270.0 ]
+}
+
+[sub_resource type="CapsuleShape2D" id=18]
+radius = 4.0
+height = 5.0
 
 [node name="PlayerV6" type="KinematicBody2D"]
 collision_layer = 3
@@ -143,6 +209,7 @@ rotation = -1.5708
 shape = SubResource( 1 )
 
 [node name="Example" type="Sprite" parent="."]
+visible = false
 position = Vector2( 604, 31 )
 texture = ExtResource( 2 )
 
@@ -156,17 +223,34 @@ anims/RunRight = SubResource( 14 )
 anims/RunUp = SubResource( 17 )
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
 margin_left = 3.0
 margin_top = 8.0
 margin_right = 5.0
 margin_bottom = 11.0
 rect_pivot_offset = Vector2( -3, -1 )
-color = Color( 1, 0, 0.984314, 1 )
+color = Color( 0.509804, 0.227451, 0.129412, 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_left = -5.0
 margin_top = 8.0
 margin_right = -3.0
 margin_bottom = 11.0
 rect_pivot_offset = Vector2( -3, -1 )
-color = Color( 1, 0, 0.984314, 1 )
+color = Color( 0.431373, 0.203922, 0.141176, 1 )
+
+[node name="HitboxPivot" type="Position2D" parent="."]
+position = Vector2( 0, 4 )
+
+[node name="InteractionHitbox" parent="HitboxPivot" instance=ExtResource( 4 )]
+position = Vector2( 1000, 0 )
+
+[node name="CollisionShape2D" parent="HitboxPivot/InteractionHitbox" index="0"]
+shape = SubResource( 18 )
+
+[node name="JointV2" parent="." instance=ExtResource( 6 )]
+position = Vector2( -4, -3 )
+scale = Vector2( 0.5, 0.5 )
+
+[editable path="HitboxPivot/InteractionHitbox"]
