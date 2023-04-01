@@ -24,6 +24,7 @@ func _process(delta):
 		currentLocation2 = currentLocation2.linear_interpolate(targetLocation2, speed2)
 		# Do something with the current location, such as move a sprite	
 		#$Forearm.rotation_degrees = 0
+		
 		$Forearm.look_at(currentLocation2)
 		$Forearm.rotation_degrees += 270
 		
@@ -33,3 +34,7 @@ func _process(delta):
 # 	$Forearm.rotation is similiar to a wind up toy. This would be really funny for a pixxle
 
 # Create a function that extends the arm for a jab fast.
+
+
+
+

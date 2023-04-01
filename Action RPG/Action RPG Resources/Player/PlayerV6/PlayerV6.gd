@@ -7,11 +7,46 @@ var speedModifier
 var horizontalTilt = 0 # skews player movement horizonally
 var verticalTilt = 0 # skews player movement vertically
 
+
+# MOVE STATE
+var state = MOVE
+
+enum{
+	MOVE,
+	ROLL,
+	ATTACK
+}
+
 onready var animationPlayer = $AnimationPlayer
+
+onready var caneHitbox = $JointV2/Forearm/Cane
+
+func _ready():
+	#SWORD HITBOX SCRIPT FOR BAT ENEMIES
+	var knockback_vector = Vector2.ZERO	
+	
+		# Get a reference to the AnimationPlayer node
+	var animation_player = get_node("AnimationPlayer")
+	
+	# Connect the on_animation_finished signal to the _on_animation_finished function
+	animation_player.connect("animation_finished", self, "_on_animation_finished")
+	
+	# Start playing the "Rolldown" animation
+	animation_player.play("Rolldown")
+
 
 
 func _physics_process(delta):
-	pass
+	match state:
+		MOVE:
+			move_state()
+		ROLL:
+			pass
+		ATTACK:
+			attack_state()
+
+
+func move_state():
 	
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("d_right") - Input.get_action_strength("a_left") + horizontalTilt
@@ -22,6 +57,9 @@ func _physics_process(delta):
 		speedModifier = RUN_SPEED
 	else:
 		speedModifier = 1
+		
+		
+		
 	# VELOCITY
 	if input_vector != Vector2.ZERO:
 		animationPlayer.play("RunRight")
@@ -31,7 +69,14 @@ func _physics_process(delta):
 		velocity = Vector2.ZERO
 	
 	velocity = move_and_slide(velocity)
+	
+	if Input.is_action_just_pressed("space"):
+		state = ATTACK
 
-	# TRANSITION TO TITLE SCREEN
-	if Input.get_action_strength("ui_right"):
-		SceneTransition.return_to_title_screen()
+func attack_state():
+	animationPlayer.play("RollDown")
+	
+
+func _on_animation_finished(animation_name):
+	if animation_name == "Rolldown":
+		print("Hi")
