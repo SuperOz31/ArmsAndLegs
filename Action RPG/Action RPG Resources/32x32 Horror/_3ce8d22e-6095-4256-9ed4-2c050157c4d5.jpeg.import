@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/_3ce8d22e-6095-4256-9ed4-2c050157c4d5.jpeg-f93c531767463a45504ff0a3856febc9.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Action RPG/Action RPG Resources/32x32 Horror/_3ce8d22e-6095-4256-9ed4-2c050157c4d5.jpeg"
+dest_files=[ "res://.import/_3ce8d22e-6095-4256-9ed4-2c050157c4d5.jpeg-f93c531767463a45504ff0a3856febc9.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

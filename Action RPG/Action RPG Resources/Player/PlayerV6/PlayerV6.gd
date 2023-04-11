@@ -18,6 +18,8 @@ enum{
 }
 
 onready var animationPlayer = $AnimationPlayer
+onready var animationTree = $AnimationTree
+onready var animationState = animationTree.get("parameters/playback")
 
 onready var caneHitbox = $JointV2/Forearm/Cane
 
@@ -32,7 +34,7 @@ func _ready():
 	animation_player.connect("animation_finished", self, "_on_animation_finished")
 	
 	# Start playing the "Rolldown" animation
-	animation_player.play("Rolldown")
+	#animation_player.play("Rolldown")
 
 
 
@@ -59,15 +61,16 @@ func move_state():
 		speedModifier = 1
 		
 		
-		
 	# VELOCITY
 	if input_vector != Vector2.ZERO:
-		animationPlayer.play("RunRight")
+		animationTree.set("parameters/Idle/blend_position", input_vector)
+		animationTree.set("parameters/Run/blend_position", input_vector)
+		animationState.travel("Run")
 		velocity = input_vector * MAX_SPEED * speedModifier
 	else:
-		animationPlayer.play("IdleRight")
+		animationState.travel("Idle")
 		velocity = Vector2.ZERO
-	
+		
 	velocity = move_and_slide(velocity)
 	
 	if Input.is_action_just_pressed("space"):
@@ -77,6 +80,3 @@ func attack_state():
 	animationPlayer.play("RollDown")
 	
 
-func _on_animation_finished(animation_name):
-	if animation_name == "Rolldown":
-		print("Hi")
