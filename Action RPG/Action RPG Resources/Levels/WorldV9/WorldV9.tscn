@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Action RPG/Action RPG Resources/World/TileMaps/TileMapDoorsPaintings.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Action RPG/Action RPG Resources/World/TileMaps/TileMapFloors.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Action RPG/Action RPG Resources/World/TileMaps/TileMapProps.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Action RPG/Action RPG Resources/Player/PlayerV6/PlayerV6.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Action RPG/Action RPG Resources/Levels/WorldV9/ColorRect.gd" type="Script" id=7]
 
 [node name="YSort" type="Node2D"]
 
@@ -39,3 +40,25 @@ current = true
 
 [node name="Door" parent="." instance=ExtResource( 6 )]
 position = Vector2( -24, 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 7 )
+
+[node name="Name" type="RichTextLabel" parent="ColorRect"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Text" type="RichTextLabel" parent="ColorRect"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Indicator" type="Polygon2D" parent="ColorRect"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect/Indicator"]
+
+[node name="Timer" type="Timer" parent="ColorRect"]
+one_shot = true
+
+[node name="Sprite" type="Sprite" parent="ColorRect"]
