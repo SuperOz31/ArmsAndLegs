@@ -80,3 +80,6 @@ func attack_state():
 	animationPlayer.play("RollDown")
 	
 
+
+# ADD A FLOATING DOOR ANIMATED SPRITE WHEN THE PLAYER HOVERS OVER A DOOR
+# WHEN E IS PRESSED IT IS REMOVED

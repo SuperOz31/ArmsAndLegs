@@ -1,8 +1,9 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Action RPG/Action RPG Resources/Player/PlayerV6/PlayerV6.gd" type="Script" id=1]
 [ext_resource path="res://Action RPG/Action RPG Resources/Player/PlayerV6/EXAMPLE.png" type="Texture" id=2]
 [ext_resource path="res://Action RPG/Action RPG Resources/Player/PlayerV6/Prototype_Idles_Larger_SpriteSheet.png" type="Texture" id=3]
+[ext_resource path="res://Action RPG/Action RPG Resources/World/ArmsandLegsBackgroundSpritesheet.png" type="Texture" id=4]
 [ext_resource path="res://Action RPG/Action RPG Resources/Hitboxes and Hurtboxes/JointV2.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -376,8 +377,33 @@ start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=23]
 
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 4 )
+region = Rect2( 192, 7, 16, 25 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 4 )
+region = Rect2( 208, 7, 16, 25 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 4 )
+region = Rect2( 224, 7, 16, 25 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 4 )
+region = Rect2( 240, 7, 16, 25 )
+
+[sub_resource type="SpriteFrames" id=38]
+animations = [ {
+"frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
 [node name="PlayerV6" type="KinematicBody2D"]
 collision_layer = 3
+collision_mask = 33
 script = ExtResource( 1 )
 
 [node name="Sprite2" type="Sprite" parent="."]
@@ -418,3 +444,18 @@ active = true
 parameters/playback = SubResource( 23 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( -0.00633913, 1.36552 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_left = 9.0
+margin_top = -17.0
+margin_right = 24.0
+margin_bottom = -4.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 16, -11 )
+scale = Vector2( 0.375, 0.375 )
+frames = SubResource( 38 )
+frame = 1
+playing = true

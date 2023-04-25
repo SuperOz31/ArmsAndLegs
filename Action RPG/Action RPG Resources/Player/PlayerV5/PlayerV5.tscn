@@ -165,6 +165,7 @@ texture_scale = 0.4
 energy = 0.25
 
 [node name="Cam" type="Sprite" parent="."]
+visible = false
 position = Vector2( -1, 1 )
 scale = Vector2( 0.00826772, 0.00826772 )
 texture = ExtResource( 5 )
@@ -174,6 +175,7 @@ stream = ExtResource( 6 )
 volume_db = 2.622
 
 [node name="TextureProgress" type="TextureProgress" parent="."]
+visible = false
 margin_left = -7.0
 margin_top = 4.0
 margin_right = 241.0
@@ -184,6 +186,7 @@ texture_under = ExtResource( 8 )
 texture_progress = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="."]
+visible = false
 margin_left = -6.0
 margin_top = 4.0
 margin_right = 4.0
@@ -197,12 +200,14 @@ text = "5"
 stream = ExtResource( 10 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_left = -6.0
 margin_top = 6.0
 margin_right = -3.0
 margin_bottom = 8.0
 
 [node name="TimeLabel" type="Label" parent="."]
+visible = false
 margin_left = -6.0
 margin_top = 6.0
 margin_right = 24.0

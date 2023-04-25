@@ -78,6 +78,7 @@ position = Vector2( 37, 75 )
 position = Vector2( 53, 76 )
 
 [node name="RechargeFlashBar" type="TextureProgress" parent="YSort"]
+visible = false
 margin_left = 66.0
 margin_top = 28.0
 margin_right = 314.0

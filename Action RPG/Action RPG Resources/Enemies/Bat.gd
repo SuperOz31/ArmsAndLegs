@@ -26,8 +26,6 @@ func _on_Hurtbox_area_entered(area):
 	
 	
 	
-	
-	
 	# STRONG HIT!
 	# X Velocity
 	if mouse_speed.x > StrongHitLimit or mouse_speed.x < -StrongHitLimit:
