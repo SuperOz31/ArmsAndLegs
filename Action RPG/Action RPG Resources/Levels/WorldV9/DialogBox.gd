@@ -1,6 +1,6 @@
 extends ColorRect
 
-export var dialogPath = ""
+export var dialogPath = "\\"
 export(float) var textSpeed = 0.05
 
 var dialog
@@ -13,6 +13,14 @@ func _ready():
 	dialog = getDialog()
 	assert(dialog, "Unable to retrieve dialog")
 	nextPhrase()
+	
+func _process(_delta):
+	if Input.is_action_just_pressed("space"):
+		if finished:
+			nextPhrase() # Shows next text line
+		else:
+			$Text.visable_characters = len($Text.text)
+			
 	
 func getDialog() -> Array:
 	var f = File.new()

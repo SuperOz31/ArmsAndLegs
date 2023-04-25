@@ -6,7 +6,7 @@
 [ext_resource path="res://Action RPG/Action RPG Resources/World/TileMaps/TileMapProps.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Action RPG/Action RPG Resources/Player/PlayerV6/PlayerV6.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Action RPG/Action RPG Resources/Levels/WorldV9/ColorRect.gd" type="Script" id=7]
+[ext_resource path="res://Action RPG/Action RPG Resources/Levels/WorldV9/DialogBox.gd" type="Script" id=7]
 
 [node name="YSort" type="Node2D"]
 
@@ -42,17 +42,23 @@ current = true
 position = Vector2( -24, 4 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = -61.0
+margin_top = 16.0
+margin_right = 85.0
+margin_bottom = 46.0
 script = ExtResource( 7 )
 
 [node name="Name" type="RichTextLabel" parent="ColorRect"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 32.0
+margin_top = 1.0
+margin_right = 142.0
+margin_bottom = 10.0
 
 [node name="Text" type="RichTextLabel" parent="ColorRect"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 32.0
+margin_top = 9.0
+margin_right = 143.0
+margin_bottom = 27.0
 
 [node name="Indicator" type="Polygon2D" parent="ColorRect"]
 
