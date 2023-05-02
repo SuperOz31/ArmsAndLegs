@@ -49,6 +49,7 @@ display=false
 color=false
 delta=false
 location=false
+font=false
 
 [importer_defaults]
 

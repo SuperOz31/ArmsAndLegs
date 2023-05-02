@@ -1,7 +1,7 @@
 extends ColorRect
 
 export var dialogPath = "res://Action RPG/Action RPG Resources/Levels/WorldV9/Dialog0.json"
-export(float) var textSpeed = 0.05
+export(float) var textSpeed = 0.001
 
 var dialog
 
