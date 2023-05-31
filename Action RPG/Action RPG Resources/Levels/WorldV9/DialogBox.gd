@@ -1,7 +1,7 @@
 extends ColorRect
 
 export var dialogPath = "res://Action RPG/Action RPG Resources/Levels/WorldV9/Dialog0.json"
-export(float) var textSpeed = 0.001
+export(float) var textSpeed = 1
 
 var dialog
 
@@ -19,7 +19,7 @@ func _process(_delta):
 		if finished:
 			nextPhrase() # Shows next text line
 		else:
-			$Text.visable_characters = len($Text.text)
+			$Text.visible_characters = len($Text.text)
 			
 	
 func getDialog() -> Array:
@@ -44,11 +44,11 @@ func nextPhrase() -> void:
 	finished = false
 	
 	$Name.bbcode_text = dialog[phraseNum]["Name"]
-	$Name.bbcode_text = dialog[phraseNum]["Text"]
+	$Text.bbcode_text = dialog[phraseNum]["Text"]
 	
 	$Text.visible_characters = 0
 	
-	while $Text.visible_characters < len($Text.text):
+	while $Text.visible_characters< len($Text.text):
 		$Text.visible_characters += 1 # Sets text visability to scroll letter by letter
 		
 		$Timer.start()
